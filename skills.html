@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Muhtasim | Skills</title>
+
+    <!-- SEO -->
+    <meta name="description" content="Muhtasim's skillset including programming languages, frameworks, tools, and design competencies.">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Icons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <link rel="manifest" href="site.webmanifest" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet" />
+
+    <!-- Anime.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+
+    <!-- Devicon -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css" />
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary-dark': '#121212',
+                        'secondary-dark': '#1e1e1e',
+                        'accent-color': '#818cf8',
+                        'text-light': '#e5e7eb',
+                        'text-muted': '#a1a1aa',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-primary-dark text-text-light font-sans antialiased min-h-screen flex flex-col">
+    <nav class="sticky top-0 z-50 bg-secondary-dark/95 backdrop-blur-sm border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <a href="index.html" class="text-2xl font-extrabold text-accent-color tracking-wider">
+                    <span class="text-4xl">M.</span>
+                </a>
+                <div class="hidden sm:ml-6 sm:flex sm:space-x-8">
+                    <a href="index.html" class="text-text-muted hover:text-accent-color px-3 py-2 text-sm font-medium transition duration-150">Home</a>
+                    <a href="about.html" class="text-text-muted hover:text-accent-color px-3 py-2 text-sm font-medium transition duration-150">About Me</a>
+                    <a href="skills.html" class="text-accent-color border-b-2 border-accent-color px-3 py-2 text-sm font-medium transition duration-150">Skills</a>
+                </div>
+                <button id="mobile-menu-button" aria-label="Toggle navigation menu" class="sm:hidden p-2 rounded-md text-text-muted hover:text-accent-color focus:outline-none focus:ring-2 focus:ring-inset focus:ring-accent-color">
+                    <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <div class="sm:hidden hidden" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="index.html" class="block text-text-light hover:bg-secondary-dark hover:text-accent-color px-3 py-2 rounded-md text-base font-medium" onclick="toggleMobileMenu()">Home</a>
+                <a href="about.html" class="block text-text-light hover:bg-secondary-dark hover:text-accent-color px-3 py-2 rounded-md text-base font-medium" onclick="toggleMobileMenu()">About Me</a>
+                <a href="skills.html" class="block bg-secondary-dark text-accent-color px-3 py-2 rounded-md text-base font-medium" onclick="toggleMobileMenu()">Skills</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-7xl mx-auto flex-grow p-8 w-full py-16">
+        <h1 class="text-4xl md:text-5xl font-extrabold mb-4 text-center text-text-light">
+            My <span class="text-accent-color">Skillset</span>
+        </h1>
+        <p class="text-xl text-text-muted text-center mb-16">
+            A snapshot of the languages, frameworks, and tools I use to build scalable web applications.
+        </p>
+
+        <!-- Programming Languages -->
+        <section class="mb-16">
+            <h2 class="text-3xl font-semibold border-b border-gray-700 pb-3 mb-8 text-text-light">Programming Languages</h2>
+            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
+                <div class="skill-card bg-secondary-dark p-6 rounded-lg text-center border border-gray-800 transition duration-300 hover:border-accent-color hover:shadow-lg">
+                    <i class="devicon-python-plain text-6xl text-text-light transition duration-300 hover:text-accent-color" aria-hidden="true"></i>
+                    <p class="mt-3 text-lg font-medium text-text-light">Python</p>
+                </div>
+                <div class="skill-card bg-secondary-dark p-6 rounded-lg text-center border border-gray-800 transition duration-300 hover:border-accent-color hover:shadow-lg">
+                    <i class="devicon-cplusplus-plain text-6xl text-text-light transition duration-300 hover:text-accent-color" aria-hidden="true"></i>
+                    <p class="mt-3 text-lg font-medium text-text-light">C++</p>
+                </div>
+                <div class="skill-card bg-secondary-dark p-6 rounded-lg text-center border border-gray-800 transition duration-300 hover:border-accent-color hover:shadow-lg">
+                    <i class="devicon-javascript-plain text-6xl text-text-light transition duration-300 hover:text-accent-color" aria-hidden="true"></i>
+                    <p class="mt-3 text-lg font-medium text-text-light">JavaScript</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Frameworks -->
+        <section class="mb-16">
+            <h2 class="text-3xl font-semibold border-b border-gray-700 pb-3 mb-8 text-text-light">Frameworks & Technologies</h2>
+            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
+                <div class="skill-card bg-secondary-dark p-6 rounded-lg text-center border border-gray-800 transition duration-300 hover:border-accent-color hover:shadow-lg">
+                    <i class="devicon-django-plain text-6xl text-text-light transition duration-300 hover:text-accent-color" aria-hidden="true"></i>
+                    <p class="mt-3 text-lg font-medium text-text-light">Django</p>
+                </div>
+                <div class="skill-card bg-secondary-dark p-6 rounded-lg text-center border border-gray-800 transition duration-300 hover:border-accent-color hover:shadow-lg">
+                    <i class="devicon-react-original text-6xl text-text-light transition duration-300 hover:text-accent-color" aria-hidden="true"></i>
+                    <p class="mt-3 text-lg font-medium text-text-light">React</p>
+                </div>
+                <div class="skill-card bg-secondary-dark p-6 rounded-lg text-center border border-gray-800 transition duration-300 hover:border-accent-color hover:shadow-lg">
+                    <i class="devicon-nodejs-plain text-6xl text-text-light transition duration-300 hover:text-accent-color" aria-hidden="true"></i>
+                    <p class="mt-3 text-lg font-medium text-text-light">Node.js</p>
+                </div>
+                <div class="skill-card bg-secondary-dark p-6 rounded-lg text-center border border-gray-800 transition duration-300 hover:border-accent-color hover:shadow-lg">
+                    <i class="devicon-tailwindcss-plain text-6xl text-text-light transition duration-300 hover:text-accent-color" aria-hidden="true"></i>
+                    <p class="mt-3 text-lg font-medium text-text-light">Tailwind CSS</p>
+                </div>
+                <div class="skill-card bg-secondary-dark p-6 rounded-lg text-center border border-gray-800 transition duration-300 hover:border-accent-color hover:shadow-lg">
+                    <i class="devicon-html5-plain text-6xl text-text-light transition duration-300 hover:text-accent-color" aria-hidden="true"></i>
+                    <p class="mt-3 text-lg font-medium text-text-light">HTML5</p>
+                </div>
+                <div class="skill-card bg-secondary-dark p-6 rounded-lg text-center border border-gray-800 transition duration-300 hover:border-accent-color hover:shadow-lg">
+                    <i class="devicon-css3-plain text-6xl text-text-light transition duration-300 hover:text-accent-color" aria-hidden="true"></i>
+                    <p class="mt-3 text-lg font-medium text-text-light">CSS3</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tools & Design -->
+        <section class="mb-16">
+            <h2 class="text-3xl font-semibold border-b border-gray-700 pb-3 mb-8 text-text-light">Design, Tools & Methodologies</h2>
+            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
+                <div class="skill-card bg-secondary-dark p-6 rounded-lg text-center border border-gray-800 transition duration-300 hover:border-accent-color hover:shadow-lg">
+                    <i class="devicon-figma-plain text-6xl text-text-light transition duration-300 hover:text-accent-color" aria-hidden="true"></i>
+                    <p class="mt-3 text-lg font-medium text-text-light">Figma (UI/UX)</p>
+                </div>
+                <div class="skill-card bg-secondary-dark p-6 rounded-lg text-center border border-gray-800 transition duration-300 hover:border-accent-color hover:shadow-lg">
+                    <i class="devicon-git-plain text-6xl text-text-light transition duration-300 hover:text-accent-color" aria-hidden="true"></i>
+                    <p class="mt-3 text-lg font-medium text-text-light">Git/GitHub</p>
+                </div>
+                <div class="skill-card bg-secondary-dark p-6 rounded-lg text-center border border-gray-800 transition duration-300 hover:border-accent-color hover:shadow-lg">
+                    <i class="devicon-vscode-plain text-6xl text-text-light transition duration-300 hover:text-accent-color" aria-hidden="true"></i>
+                    <p class="mt-3 text-lg font-medium text-text-light">VS Code</p>
+                </div>
+                <div class="skill-card bg-secondary-dark p-6 rounded-lg text-center border border-gray-800 transition duration-300 hover:border-accent-color hover:shadow-lg">
+                    <i class="devicon-photoshop-plain text-6xl text-text-light transition duration-300 hover:text-accent-color" aria-hidden="true"></i>
+                    <p class="mt-3 text-lg font-medium text-text-light">Graphics Design</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Core Competencies -->
+        <section class="mb-16">
+            <h2 class="text-3xl font-semibold border-b border-gray-700 pb-3 mb-8 text-text-light">Core Competencies</h2>
+            <div class="flex flex-wrap gap-4 justify-center">
+                <span class="bg-accent-color/20 text-accent-color px-4 py-2 rounded-full text-lg font-medium border border-accent-color/50">Algorithmic & Logical Thinking</span>
+                <span class="bg-accent-color/20 text-accent-color px-4 py-2 rounded-full text-lg font-medium border border-accent-color/50">Project Planning & Execution</span>
+                <span class="bg-accent-color/20 text-accent-color px-4 py-2 rounded-full text-lg font-medium border border-accent-color/50">User-Centric UI/UX Design</span>
+            </div>
+        </section>
+    </main>
+
+    <footer class="mt-auto py-6 text-center border-t border-gray-800">
+        <p class="text-sm text-text-muted">Designed and Developed by Muhtasim &copy; 2025</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        const menuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        function toggleMobileMenu() {
+            mobileMenu.classList.toggle('hidden');
+        }
+
+        menuButton.addEventListener('click', toggleMobileMenu);
+
+        anime({
+            targets: 'section',
+            opacity: [0, 1],
+            translateY: [20, 0],
+            duration: 800,
+            easing: 'easeOutQuad',
+            delay: anime.stagger(100, { start: 500 })
+        });
+    </script>
+</body>
+</html>

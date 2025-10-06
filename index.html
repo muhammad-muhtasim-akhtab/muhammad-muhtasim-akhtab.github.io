@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Muhtasim | Developer & Designer</title>
+
+  <!-- Meta SEO -->
+  <meta name="description" content="Hi, I'm Muhtasim — a developer focused on building fast, accessible, and scalable web applications. Explore my work.">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  <link rel="manifest" href="site.webmanifest" />
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet" />
+
+  <!-- Animation Library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+
+  <!-- Tailwind Custom Theme -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'primary-dark': '#121212',
+            'secondary-dark': '#1e1e1e',
+            'accent-color': '#818cf8',
+            'text-light': '#66e0ff',
+            'text-muted': '#a1a1aa',
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    .explore-button-text {
+      -webkit-text-fill-color: #00ad68;
+      transition: color 0.3s ease;
+
+    }
+
+    .explore-button-text:hover,
+    .explore-button-text:focus,
+    .explore-button-text:active {
+      -webkit-text-fill-color: #7bb6fe;
+    }
+
+    .banner-logo{
+        -webkit-text-fill-color: antiquewhite;
+    }
+
+    .neon-button {
+      position: relative;
+      display: inline-block;
+      z-index: 0;
+      padding: 0.75rem 1.5rem;
+      font-weight: 600;
+      font-size: 1rem;
+      color: #ffffff;
+      background-color: #121212;
+      border-radius: 0.5rem;
+      text-align: center;
+      text-decoration: none;
+      overflow: visible;
+      transition: transform 0.2s ease, box-shadow 0.3s ease;
+    }
+
+    .neon-button::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 83%;
+      height: 83%;
+      transform: translate(-50%, -50%) scale(1.2);
+      z-index: -2;
+      background: linear-gradient(60deg, #00ccff, #6600cc, #ff0077, #ff0000, #fa06da);
+      background-size: 400% 400%;
+      animation: neonBorder 4s linear infinite;
+      filter: blur(8px);
+      opacity: 0;
+      border-radius: inherit;
+      transition: opacity 0.4s ease;
+    }
+
+    .neon-button:hover::before {
+      opacity: 1;
+    }
+
+    .neon-button::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      background-color: #121212;
+      border-radius: inherit;
+      border: 1px solid rgb(0, 30, 90);
+    }
+
+    .neon-button:hover::after,
+    .neon-button:focus::after,
+    .neon-button:active::after {
+      border-color: transparent;
+    }
+
+    .neon-button:hover {
+      transform: scale(1.05);
+    }
+
+    @keyframes neonBorder {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+  </style>
+</head>
+
+<body class="bg-primary-dark text-text-light font-sans antialiased min-h-screen flex flex-col">
+
+  <!-- Navbar -->
+  <nav role="navigation" class="sticky top-0 z-50 bg-secondary-dark/95 backdrop-blur-sm border-b border-gray-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <a href="index.html" class="text-2xl font-extrabold text-text-light tracking-wider">
+          <span class="text-4xl">M.</span>
+        </a>
+        <!-- Desktop Nav -->
+        <div class="hidden sm:flex sm:space-x-8">
+          <a href="index.html" class="text-accent-color border-b-2 border-accent-color px-3 py-2 text-sm font-medium transition duration-150">Home</a>
+          <a href="about.html" class="text-text-muted hover:text-accent-color px-3 py-2 text-sm font-medium transition duration-150">About Me</a>
+          <a href="skills.html" class="text-text-muted hover:text-accent-color px-3 py-2 text-sm font-medium transition duration-150">Skills</a>
+        </div>
+        <!-- Mobile Nav Toggle -->
+        <button id="mobile-menu-button" aria-label="Toggle navigation menu" class="sm:hidden p-2 rounded-md text-text-muted hover:text-accent-color focus:outline-none focus:ring-2 focus:ring-inset focus:ring-accent-color">
+          <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+    </div>
+    <!-- Mobile Menu -->
+    <div class="sm:hidden hidden" id="mobile-menu">
+      <div class="px-2 pt-2 pb-3 space-y-1">
+        <a href="index.html" class="block bg-secondary-dark text-accent-color px-3 py-2 rounded-md text-base font-medium" onclick="toggleMobileMenu()">Home</a>
+        <a href="about.html" class="block text-text-light hover:bg-secondary-dark hover:text-accent-color px-3 py-2 rounded-md text-base font-medium" onclick="toggleMobileMenu()">About Me</a>
+        <a href="skills.html" class="block text-text-light hover:bg-secondary-dark hover:text-accent-color px-3 py-2 rounded-md text-base font-medium" onclick="toggleMobileMenu()">Skills</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Hero Section -->
+  <main role="main" class="max-w-7xl mx-auto flex-grow p-8 w-full">
+    <section id="home-intro" class="min-h-[calc(100vh-64px)] flex flex-col items-center justify-center pt-16">
+      <div class="text-center space-y-8">
+        <!-- Profile Image -->
+        <div class="w-40 h-40 mx-auto rounded-full bg-secondary-dark border-4 border-accent-color shadow-xl overflow-hidden mb-6">
+          <img id="profile-img" src="profile.jpg" alt="Muhtasim's Profile Picture"
+               class="w-full h-full object-cover"
+               onerror="this.onerror=null; this.src='https://placehold.co/160x160/1e1e1e/a1a1aa?text=M'; this.style.objectFit='contain';" />
+        </div>
+
+        <!-- Intro Text -->
+        <h1 class="text-5xl md:text-7xl font-extrabold text-text-light opacity-0 animate-target">
+          Hi, I'm <span class="text-accent-color">Muhtasim</span>, a Developer.
+        </h1>
+        <p class="text-xl md:text-2xl text-text-muted max-w-4xl mx-auto font-light opacity-0 animate-target">
+          I architect and build accessible, high-performance web applications. My focus is delivering quality, scalable digital experiences.
+        </p>
+
+        <!-- CTA Button -->
+        <a href="garage.html" class="neon-button mt-16 text-lg font-semibold explore-button-text hover:explore-button-text transition duration-150 px-6 py-2 rounded-md transform hover:scale-105">
+          Explore My Work &rarr;
+        </a>
+
+        <!-- Social Icons -->
+        <div class="pt-10 flex justify-center space-x-6 opacity-0 animate-target">
+          <!-- GitHub -->
+          <a href="https://github.com/muhammad-muhtasim-akhtab" target="_blank" rel="noopener noreferrer" class="text-text-light hover:text-accent-color transition duration-150 transform hover:scale-110" aria-label="GitHub">
+            <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+              <title>GitHub</title>
+              <path d="M12 0C5.37 0 0 5.373 0 12a12 12 0 0 0 8.207 11.385c.6.113.82-.26.82-.577v-2.234c-3.338.728-4.033-1.415-4.033-1.415-.546-1.387-1.333-1.756-1.333-1.756-1.09-.745.083-.73.083-.73 1.205.086 1.84 1.236 1.84 1.236 1.07 1.834 2.809 1.304 3.492.997.108-.775.418-1.304.76-1.603-2.665-.304-5.467-1.335-5.467-5.933 0-1.311.468-2.382 1.236-3.221-.124-.303-.536-1.524.117-3.176 0 0 1.008-.322 3.3 1.23a11.5 11.5 0 0 1 6 0c2.29-1.552 3.296-1.23 3.296-1.23.655 1.653.243 2.874.12 3.176.77.839 1.235 1.91 1.235 3.221 0 4.61-2.807 5.625-5.48 5.922.43.372.815 1.102.815 2.222v3.293c0 .32.218.694.825.576A12.006 12.006 0 0 0 24 12c0-6.627-5.373-12-12-12z"/>
+            </svg>
+          </a>
+
+          <!-- LinkedIn -->
+          <a href="https://linkedin.com/in/muhtasimakhtab" target="_blank" rel="noopener noreferrer" class="text-text-light hover:text-accent-color transition duration-150 transform hover:scale-110" aria-label="LinkedIn">
+            <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+              <title>LinkedIn</title>
+              <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM4 9h4v12H4V9zM6 3.5a2.5 2.5 0 110 5 2.5 2.5 0 010-5z" />
+            </svg>
+          </a>
+
+          <!-- Email -->
+          <a href="mailto:muhtasimakhtab@gmail.com" class="text-text-light hover:text-accent-color transition duration-150 transform hover:scale-110" aria-label="Email">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <title>Email</title>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="mt-auto py-6 text-center border-t border-gray-800">
+    <p class="text-sm text-text-muted">Designed and Developed by Muhtasim &copy; 2025</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    const menuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    function toggleMobileMenu() {
+      mobileMenu.classList.toggle('hidden');
+    }
+
+    menuButton.addEventListener('click', toggleMobileMenu);
+
+    // anime.js animation
+    anime({
+      targets: '.animate-target',
+      opacity: [0, 1],
+      translateY: [20, 0],
+      duration: 1000,
+      easing: 'easeOutQuad',
+      delay: anime.stagger(200, { start: 500 })
+    });
+  </script>
+</body>
+</html>

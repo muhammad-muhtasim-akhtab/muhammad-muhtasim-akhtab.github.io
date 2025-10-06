@@ -1,0 +1,13 @@
+
+.A {
+    color: rgb(255, 0, 0);
+    padding-top: 40px;
+    text-align: center;
+    /*border-radius: 4px;*/    
+    font-weight: bold;
+}
+
+
+.B {
+    padding-left:40px;
+}
